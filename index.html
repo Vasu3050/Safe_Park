@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafePark Login</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: whitesmoke;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #0F1111;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+
+        .login-container h1 {
+            margin-bottom: 20px;
+        }
+
+        .login-container input[type="email"],
+        .login-container input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px  0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .login-container button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .login-container button:hover {
+            background-color: #45a049;
+        }
+
+        .login-container .link {
+            display: block;
+            margin: 10px 0;
+            color: #4CAF50;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .login-container .link:hover {
+            text-decoration: underline;
+        }
+
+        .background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Send the video behind all other content */
+}
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h1>SafePark Login</h1>
+        <form onsubmit="return validateForm()">
+            <input type="email" id="email" placeholder="Enter Gmail" required>
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <a href="forgot-password.html" class="link">Forgot Password?</a>
+        <a href="signup.html" class="link">Sign up for a new account</a>
+    </div>
+
+    <script>
+        function validateForm() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (!email.endsWith('@gmail.com')) {
+                alert("Please enter a valid Gmail address.");
+                return false;
+            }
+
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+
+            alert("Login successful! Redirecting...");
+            window.location.href = "index1.html";
+            return false; // To prevent form submission
+        }
+    </script>
+    <!-- Background Video -->
+    <video class="background-video" autoplay muted loop>
+        <source src="v1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</body>
+
+
+</html>

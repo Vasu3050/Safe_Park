@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafePark Payment</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: whitesmoke;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .payment-container {
+            background-color: #0F1111;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+
+        .payment-container h1 {
+            margin-bottom: 20px;
+        }
+
+        .payment-container p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .payment-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px 5px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .payment-button:hover {
+            background-color: #45a049;
+        }
+
+        .qr-code {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .qr-code img {
+            width: 200px;
+            height: 200px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="payment-container">
+        <h1>Payment Page</h1>
+        <p>Please pay ₹100 to continue.</p>
+        <p><strong>UPI ID:</strong> 8073710024@axl</p>
+        <p>Choose a payment method:</p>
+        <button class="payment-button" onclick="showQRCode('GPay')">Pay with GPay</button>
+        <button class="payment-button" onclick="showQRCode('PhonePe')">Pay with PhonePe</button>
+        <div class="qr-code" id="qr-code">
+            <p id="qr-text"></p>
+            <!-- Use the local file path here for the image -->
+            <img src="" id="qr-image" alt="QR Code for payment">
+        </div>
+    </div>
+
+    <script>
+        function showQRCode(platform) {
+            const upiId = "8073710024@axl";
+            const amount = 100;
+            const upiUrl = `upi://pay?pa=${upiId}&pn=SafePark&am=${amount}&cu=INR&tn=Payment%20for%20SafePark`;
+
+            // Generate QR Code using an API (optional, if you want to generate a new QR)
+            // const qrImageUrl = `W${encodeURIComponent(upiUrl)}&choe=UTF-8`;
+
+            document.getElementById("qr-text").innerText = `Scan this QR code with ${platform}:`;
+            // Use the local path directly in the src attribute for testing
+            document.getElementById("qr-image").src = "file:///C:/Users/venuv/Documents/web/Projects/SafePark/WhatsApp%20Image%202024-11-29%20at%2013.09.02_7f349609.jpg";
+            document.getElementById("qr-code").style.display = "block";
+        }
+    </script>
+</body>
+
+</html>

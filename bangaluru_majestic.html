@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafePark</title>
+    <link rel="stylesheet" href="next.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        let selectedSlot = null; // To store the currently selected slot
+
+        // Function to toggle the slot selection
+        function toggleSelection(element) {
+            // If the selected slot is already clicked again, deselect it
+            if (selectedSlot === element) {
+                element.classList.remove('selected');
+                element.style.backgroundColor = '#90ee90'; // Green for empty
+                selectedSlot = null;
+            } else {
+                // If there is already a selected slot, reset it
+                if (selectedSlot) {
+                    selectedSlot.classList.remove('selected');
+                    selectedSlot.style.backgroundColor = '#90ee90'; // Green for empty
+                }
+
+                // Select the new slot and change its background color to light green
+                element.classList.add('selected');
+                element.style.backgroundColor = '#ff0'; // Light green for selected
+                selectedSlot = element; // Update the selected slot to the current one
+            }
+
+            // Enable or disable the "Book Now" button based on selection
+            document.getElementById('bookNowButton').disabled = !selectedSlot;
+        }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="profile">
+            <div class="photo"></div>
+            <div class="name">Vasudev V Adabaddi</div>
+        </div>
+        <div class="site"><a href="index.html" target="main">SafePark</a></div>
+        <div class="book"><button class="booking"><a href="Reservations.html" target="main" class="history">Reservations</a></button></div>
+    </header>
+
+    <div class="backe"><a href="index.html" class="back">< back</a></div>
+
+    <div class="cont">
+        <div class="ar">Area : Majestic</div>
+
+        <div class="lot">
+            <!-- Row 1 -->
+            <div class="l1 l">
+                <div class="p11 p" onclick="toggleSelection(this)"></div>
+                <div class="p12 p" onclick="toggleSelection(this)"></div>
+                <div class="p13 p" onclick="toggleSelection(this)"></div>
+                <div class="p14 p" onclick="toggleSelection(this)"></div>
+                <div class="p15 p" onclick="toggleSelection(this)"></div>
+                <div class="p16 p" onclick="toggleSelection(this)"></div>
+                <div class="p17 p" onclick="toggleSelection(this)"></div>
+                <div class="p18 p" onclick="toggleSelection(this)"></div>
+                <div class="p19 p" onclick="toggleSelection(this)"></div>
+                <div class="p110 p" onclick="toggleSelection(this)"></div>
+            </div>
+            <div class="l2 l">
+                <p>G</p>
+                <p>a</p>
+                <p>t</p>
+                <p>e</p>
+                <p></p>
+                <p>1</p>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="l3 l">
+                <div class="p21 p" onclick="toggleSelection(this)"></div>
+                <div class="p22 p" onclick="toggleSelection(this)"></div>
+                <div class="p23 p" onclick="toggleSelection(this)"></div>
+                <div class="p24 p" onclick="toggleSelection(this)"></div>
+                <div class="p25 p" onclick="toggleSelection(this)"></div>
+                <div class="p26 p" onclick="toggleSelection(this)"></div>
+                <div class="p27 p" onclick="toggleSelection(this)"></div>
+                <div class="p28 p" onclick="toggleSelection(this)"></div>
+                <div class="p29 p" onclick="toggleSelection(this)"></div>
+                <div class="p210 p" onclick="toggleSelection(this)"></div>
+            </div>
+            <div class="l4 l">
+                <p>G</p>
+                <p>a</p>
+                <p>t</p>
+                <p>e</p>
+                <p></p>
+                <p>2</p>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="l5 l">
+                <div class="p31 p" onclick="toggleSelection(this)"></div>
+                <div class="p32 p" onclick="toggleSelection(this)"></div>
+                <div class="p33 p" onclick="toggleSelection(this)"></div>
+                <div class="p34 p" onclick="toggleSelection(this)"></div>
+                <div class="p35 p" onclick="toggleSelection(this)"></div>
+                <div class="p36 p" onclick="toggleSelection(this)"></div>
+                <div class="p37 p" onclick="toggleSelection(this)"></div>
+                <div class="p38 p" onclick="toggleSelection(this)"></div>
+                <div class="p39 p" onclick="toggleSelection(this)"></div>
+                <div class="p310 p" onclick="toggleSelection(this)"></div>
+            </div>
+        </div>
+
+        <div class="ind">
+            <div class="booked"><div class="filla"></div> Booked</div>
+            <div class="selected"><div class="fillb"></div> Selected</div>
+            <div class="empty"><div class="fillc"><pre>   Empty</pre></div></div>
+            <div class="fare">Fare : ₹100 / slot</div>
+        </div>
+
+        <!-- Book Now Button -->
+        <button id="bookNowButton" class="book-now" onclick="window.location.href='ticketDetails.html?selectedSlot=' + selectedSlot.id" disabled>Book Now</button>
+    </div>
+
+    <footer class="footer">
+        <div class="para">© 2024 SafePark - All rights reserved.</div>
+    </footer>
+</body>
+</html>

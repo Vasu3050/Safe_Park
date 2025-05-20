@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Details</title>
+    <link rel="stylesheet" href="pay.css">
+    <script>
+
+        // Function to add 3 hours to the current time and return it in a formatted string
+        function getFutureTime() {
+            let currentTime = new Date();
+            currentTime.setHours(currentTime.getHours() + 3); // Add 3 hours
+            let hours = currentTime.getHours().toString().padStart(2, '0');
+            let minutes = currentTime.getMinutes().toString().padStart(2, '0');
+            let formattedTime = hours + ':' + minutes;
+            return formattedTime;
+        }
+
+        // Function to populate ticket details on page load
+        window.onload = function() {
+            // Get query parameters (passed from the previous page)
+            let urlParams = new URLSearchParams(window.location.search);
+            let selectedSlot = urlParams.get('selectedSlot');
+            
+            // Display the selected slot and other ticket details
+            document.getElementById('selectedSlot').textContent = selectedSlot;
+            document.getElementById('fare').textContent = "₹100";
+            document.getElementById('area').textContent = "GIT College"; // Corrected Area
+            document.getElementById('city').textContent = "Belagavi"; // Corrected City
+
+            // Display the date and time 3 hours ahead
+            document.getElementById('bookingTime').textContent = getFutureTime();
+        }
+    </script>
+</head>
+<body>
+     <!-- Background Video -->
+     <video class="background-video" autoplay muted loop>
+        <source src="v4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <header class="header">
+        <div class="profile">
+            <div class="photo"></div>
+            <div class="name">Vasudev V Adabaddi</div>
+        </div>
+        <div class="site"><a href="index.html" target="main">SafePark</a></div>
+        <div class="book"><button class="booking"><a href="Reservations.html" target="main" class="history">Reservations</a></button></div>
+    </header>
+
+    <div class="backe"><a href="index.html" class="back">< back</a></div>
+
+    <div class="ticket-details">
+        <h2>Booking Details</h2>
+        <p><strong>Slot Number: </strong>P33<span id="selectedSlot"></span></p>
+        <p><strong>Fare: </strong><span id="fare"></span></p>
+        <p><strong>Area: </strong><span id="area"></span></p>
+        <p><strong>City: </strong><span id="city"></span></p>
+        <p><strong>Booking Date and Time: </strong><span id="bookingTime"></span></p>
+
+        <!-- Payment button -->
+        <button id="payButton" class="pay-now" onclick="window.location.href='paymentPage.html'">Pay Now</button>
+    </div>
+
+    <footer class="footer">
+        <div class="para">© 2024 SafePark - All rights reserved.</div>
+    </footer>
+</body>
+</html>

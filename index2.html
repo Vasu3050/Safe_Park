@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafePark</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Style for the background video */
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Send the video behind all other content */
+        }
+        .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Add a dark overlay for better text readability */
+            z-index: 0; /* Place overlay above the video */
+        }
+        body > *:not(.background-video):not(.video-overlay) {
+            position: relative;
+            z-index: 1; /* Ensure other content is above the video and overlay */
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+    <video class="background-video" autoplay muted loop>
+        <source src="istockphoto-2072846963-640_adpp_is.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <!-- Overlay for better readability -->
+    <div class="video-overlay"></div>
+
+    <header class="header">
+        <div class="profile">
+           <div class="photo"></div>
+            <div class="name">Vasudev V Adabaddi</div>
+        </div>
+        <div class="site"><a href="index.html" target="main">SafePark </a></div>
+        <div class="book"><button class="booking"> <a href="Reservations.html" target="main" class="history">Reservations</a></button></div>
+    </header>
+
+    <div class="cont">
+        <form id="parkingForm">
+            <label for="city">Select City:</label>
+            <select id="city" name="city" required>
+                <option value="">--Select City--</option>
+                <option value="Belagavi">Belagavi</option>
+                <option value="Bangaluru">Bangaluru</option>
+                <option value="Hubli">Hubli</option>
+            </select>
+        
+            <label for="area">Select Area:</label>
+            <select id="area" name="area" required>
+                <option value="">--Select Area--</option>
+            </select>
+        
+            <label for="dateTime">Select Date & Time:</label>
+            <input type="datetime-local" id="dateTime" name="dateTime" required>
+        
+            <button type="submit" class="but">Search Parking Spots</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <div class="para">© 2024 SafePark - All rights reserved.</div>
+    </footer>
+
+    <script>
+        const cityAreaMap = {
+            Belagavi: ["GIT College", "Railway Station"],
+            Bangaluru: ["Electronic City", "Majestic"],
+            Hubli: ["KIMS College", "Bus Stand"],
+        };
+
+        // Get references to the dropdowns
+        const cityDropdown = document.getElementById("city");
+        const areaDropdown = document.getElementById("area");
+
+        // Add an event listener for when the city is selected
+        cityDropdown.addEventListener("change", function () {
+            const selectedCity = cityDropdown.value;
+
+            // Clear the area dropdown
+            areaDropdown.innerHTML = '<option value="">--Select Area--</option>';
+
+            if (selectedCity && cityAreaMap[selectedCity]) {
+                // Populate the area dropdown with the areas of the selected city
+                cityAreaMap[selectedCity].forEach(area => {
+                    const option = document.createElement("option");
+                    option.value = area.replace(/\s+/g, ""); // Remove spaces for unique value
+                    option.textContent = area;
+                    areaDropdown.appendChild(option);
+                });
+            }
+        });
+
+        // Handle form submission
+        document.getElementById("parkingForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const city = cityDropdown.value;
+            const area = areaDropdown.value;
+
+            if (!city || !area) {
+                alert("Please select both city and area!");
+                return;
+            }
+
+            // Define your page redirection logic
+            const pages = {
+                Belagavi: {
+                    GITCollege: "belagavi_git.html",
+                    RailwayStation: "belagavi_station.html"
+                },
+                Bangaluru: {
+                    ElectronicCity: "bangaluru_electronic.html",
+                    Majestic: "bangaluru_majestic.html"
+                },
+                Hubli: {
+                    KIMSCollege: "hubli_kims.html",
+                    BusStand: "hubli_busstand.html"
+                }
+            };
+
+            const selectedPage = pages[city][area];
+            if (selectedPage) {
+                window.location.href = selectedPage;
+            } else {
+                alert("Page not available for the selected city and area.");
+            }
+        });
+    </script>
+</body>
+</html>

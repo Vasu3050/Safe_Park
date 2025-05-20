@@ -1,0 +1,652 @@
+*{
+    padding: 0px;
+    margin: 0px;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;
+    height: 100vh;
+    margin: 0;
+    
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    height: 10vh;
+    width: 100vw;
+    background-color: #0F1111;
+    border-bottom: 5px solid white;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    position: fixed;
+
+}
+.profile{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    width: 40%;
+    color: white;
+
+
+}
+.photo{
+    height: 50px;
+    width: 50px;
+    border-radius: 50% ;
+    border: 0.5px solid black;
+    background-image: url(WhatsApp\ Image\ 2024-10-27\ at\ 16.09.41_35cb323b.jpg);
+    background-size: cover;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.book{
+    width: 10%;
+    color: white;
+    
+}
+.site{
+    width: 50%;
+    position: relative;
+    left: 100px;
+    font-size: xx-large;
+    color: white;
+}
+.site a{
+    text-decoration: none;
+    color: black;
+    color: white;
+}
+
+.booking{
+    font-size: larger;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    
+}
+
+.history{
+    color: white;
+    text-decoration: none;
+}
+
+.back{
+    position: relative;
+    top: 12vh;
+    color: black;
+    text-decoration: none;
+
+}
+
+.cont{
+    width: 60vw;
+    height: 70vh;
+    color: #0F1111;
+    position: relative;
+    top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+
+.ar{
+    padding: 10px;
+}
+
+.lot{
+    height: 55vh;
+    width: 55vw;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px ;
+    border: 2px solid grey;
+
+}
+
+.ind{
+    width: 55vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+
+
+}
+.booked{
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+
+}
+
+.selected{
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.empty{
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+    
+}
+.filla{
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    margin-right: 5px;
+    border: 1.5px solid gray;
+    
+
+}
+.fillb{
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    margin-right: 5px;
+    border: 1.5px solid gray;
+
+}
+.fillc{
+    width: 10px;
+    height: 10px;
+    background-color: yellow;    
+    margin-right: 5px;
+    border: 1.5px solid gray;
+
+    
+}
+.fare{
+    display: flex;
+    width: 25%;
+}
+
+.l{
+    height: 20%;
+    width: 100%;
+    margin: 0px;
+    padding: 0%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.l2{
+    justify-content: flex-start;
+}
+
+.l4{
+    justify-content: flex-start;
+}
+
+
+.p{
+    width: 10%;
+    height: 100%;
+    padding: 0%;
+    margin: 0px;
+    border: 2px solid grey;
+    margin: 1px;
+}
+
+.p11{
+    background-color: yellow;
+}
+.p12{
+    background-color: yellow;
+}
+.p13{
+    background-color: yellow;
+}
+.p14{
+    background-color: red;
+}
+.p15{
+    background-color: red;
+}
+.p16{
+    background-color: red;
+}
+.p17{
+    background-color: yellow;
+}
+.p18{
+    background-color: yellow;
+}
+.p19{
+    background-color: red;
+}
+.p110{
+    background-color: red;
+}
+
+.p21{
+    background-color: red;
+
+}
+.p22{
+    background-color: yellow;
+}
+
+.p23{
+    background-color: red;
+}
+
+.p24{
+    background-color: red;
+}
+
+.p25{
+    background-color: red;
+}
+
+.p26{
+    background-color: yellow;
+}
+
+.p27{
+    background-color: red;
+}
+
+.p28{
+    background-color: yellow;
+}
+
+.p29{
+    background-color: red;
+}
+.p210{
+    background-color: red;
+}
+
+.p33{
+    background-color: yellow;
+}
+.p34{
+    background-color: red;
+}
+.p35{
+    background-color: red;
+}
+.p36{
+    background-color: red;
+}
+.p37{
+    background-color: yellow;
+}
+.p38{
+    background-color: yellow;
+}
+
+.p39{
+    background-color: red;
+}
+
+.p310{
+    background-color: yellow;
+}
+.p32{
+    background-color: red;
+}
+
+.p31{
+    background-color: yellow;
+}
+
+.p11:hover {
+    transform: scale(1.3); /* Enlarges the box */
+    background-color: green; /* Changes color to green */
+    
+}
+
+.p11:hover::after {
+    content: "Slot No: P11";
+    position: absolute;
+    top: -60px; /* Adjusts position above the main box */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: grey;
+    color: black;
+    border: 1px solid black;
+    white-space: pre; /* Maintains line breaks in content */
+    font-size: 14px;
+    text-align: center;
+    width: 120px; /* Adjust width as needed */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.p12:hover {
+    transform: scale(1.3); /* Enlarges the box */
+    background-color: green; /* Changes color to green */
+}
+
+.p12:hover::after {
+    content: "Slot No: P12";
+    position: absolute;
+    top: -60px; /* Adjusts position above the main box */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: grey;
+    color: black;
+    border: 1px solid black;
+    white-space: pre; /* Maintains line breaks in content */
+    font-size: 14px;
+    text-align: center;
+    width: 120px; /* Adjust width as needed */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.p13:hover {
+    transform: scale(1.3); /* Enlarges the box */
+    background-color: green; /* Changes color to green */
+}
+
+.p13:hover::after {
+    content: "Slot No: P13";
+    position: absolute;
+    top: -60px; /* Adjusts position above the main box */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: grey;
+    color: black;
+    border: 1px solid black;
+    white-space: pre; /* Maintains line breaks in content */
+    font-size: 14px;
+    text-align: center;
+    width: 120px; /* Adjust width as needed */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.p17:hover {
+    transform: scale(1.3); /* Enlarges the box */
+    background-color: green; /* Changes color to green */
+}
+
+.p17:hover::after {
+    content: "Slot No: P17";
+    position: absolute;
+    top: -60px; /* Adjusts position above the main box */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: grey;
+    color: black;
+    border: 1px solid black;
+    white-space: pre; /* Maintains line breaks in content */
+    font-size: 14px;
+    text-align: center;
+    width: 120px; /* Adjust width as needed */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.p18:hover {
+    transform: scale(1.3); /* Enlarges the box */
+    background-color: green; /* Changes color to green */
+}
+
+.p18:hover::after {
+    content: "Slot No: P18";
+    position: absolute;
+    top: -60px; /* Adjusts position above the main box */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: grey;
+    color: black;
+    border: 1px solid black;
+    white-space: pre; /* Maintains line breaks in content */
+    font-size: 14px;
+    text-align: center;
+    width: 120px; /* Adjust width as needed */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.p26:hover {
+    transform: scale(1.3); /* Enlarges the box */
+    background-color: green; /* Changes color to green */
+    
+}
+
+.p26:hover::after {
+    content: "Slot No: P26";
+    position: absolute;
+    top: -60px; /* Adjusts position above the main box */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: grey;
+    color: black;
+    border: 1px solid black;
+    white-space: pre; /* Maintains line breaks in content */
+    font-size: 14px;
+    text-align: center;
+    width: 120px; /* Adjust width as needed */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.p22:hover {
+    transform: scale(1.3); /* Enlarges the box */
+    background-color: green; /* Changes color to green */
+}
+
+.p22:hover::after {
+    content: "Slot No: P22";
+    position: absolute;
+    top: -60px; /* Adjusts position above the main box */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: grey;
+    color: black;
+    border: 1px solid black;
+    white-space: pre; /* Maintains line breaks in content */
+    font-size: 14px;
+    text-align: center;
+    width: 120px; /* Adjust width as needed */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.p28:hover {
+    transform: scale(1.3); /* Enlarges the box */
+    background-color: green; /* Changes color to green */
+}
+
+.p28:hover::after {
+    content: "Slot No: P28";
+    position: absolute;
+    top: -60px; /* Adjusts position above the main box */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: grey;
+    color: black;
+    border: 1px solid black;
+    white-space: pre; /* Maintains line breaks in content */
+    font-size: 14px;
+    text-align: center;
+    width: 120px; /* Adjust width as needed */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.p31:hover {
+    transform: scale(1.3); /* Enlarges the box */
+    background-color: green; /* Changes color to green */
+}
+
+.p31:hover::after {
+    content: "Slot No: P31";
+    position: absolute;
+    top: -60px; /* Adjusts position above the main box */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: grey;
+    color: black;
+    border: 1px solid black;
+    white-space: pre; /* Maintains line breaks in content */
+    font-size: 14px;
+    text-align: center;
+    width: 120px; /* Adjust width as needed */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.p33:hover {
+    transform: scale(1.3); /* Enlarges the box */
+    background-color: green; /* Changes color to green */
+}
+
+.p33:hover::after {
+    content: "Slot No: P33";
+    position: absolute;
+    top: -60px; /* Adjusts position above the main box */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: grey;
+    color: black;
+    border: 1px solid black;
+    white-space: pre; /* Maintains line breaks in content */
+    font-size: 14px;
+    text-align: center;
+    width: 120px; /* Adjust width as needed */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.p37:hover {
+    transform: scale(1.3); /* Enlarges the box */
+    background-color: green; /* Changes color to green */
+}
+
+.p37:hover::after {
+    content: "Slot No: P37";
+    position: absolute;
+    top: -60px; /* Adjusts position above the main box */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: grey;
+    color: black;
+    border: 1px solid black;
+    white-space: pre; /* Maintains line breaks in content */
+    font-size: 14px;
+    text-align: center;
+    width: 120px; /* Adjust width as needed */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.p38:hover {
+    transform: scale(1.3); /* Enlarges the box */
+    background-color: green; /* Changes color to green */
+}
+
+.p38:hover::after {
+    content: "Slot No: P38";
+    position: absolute;
+    top: -60px; /* Adjusts position above the main box */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: grey;
+    color: black;
+    border: 1px solid black;
+    white-space: pre; /* Maintains line breaks in content */
+    font-size: 14px;
+    text-align: center;
+    width: 120px; /* Adjust width as needed */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.p310:hover {
+    transform: scale(1.3); /* Enlarges the box */
+    background-color: green; /* Changes color to green */
+}
+
+.p310:hover::after {
+    content: "Slot No: P310";
+    position: absolute;
+    top: -60px; /* Adjusts position above the main box */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: grey;
+    color: black;
+    border: 1px solid black;
+    white-space: pre; /* Maintains line breaks in content */
+    font-size: 14px;
+    text-align: center;
+    width: 120px; /* Adjust width as needed */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.footer{
+    display: flex;
+    height: 10vh;
+    width: 100vw;
+    background-color: #0F1111;
+    border-top: 5px solid white;
+    align-items: center;
+    justify-content: center;  
+    color: white;
+    position: fixed;
+    bottom: 0px;
+    
+}
+.para{
+    width: 100%;
+    height: 100px;
+    align-content: center;
+    align-self: center;
+    position: absolute;
+    left: 43%;
+    
+    
+}
+.ln{
+    text-decoration: none;
+    color: white;
+}
+
+.book-now{
+    background-color: #4CAF50;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+    font-weight: 500;
+    font-size: larger;
+
+}
+
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Send the video behind all other content */
+}

@@ -1,0 +1,141 @@
+*{
+    padding: 0px;
+    margin: 0px;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;
+    height: 100vh;
+    margin: 0;
+    /* background-image: url(https://th.bing.com/th/id/OIP.iKWSSGBLROjDQNGFOLPuigHaDC?w=335&h=143&c=7&r=0&o=5&dpr=1.3&pid=1.7);
+    background-size: ; */
+
+    
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    height: 10vh;
+    width: 100vw;
+    background-color: #0F1111;
+    
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    position: fixed;
+
+}
+.profile{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    width: 40%;
+    color: white;
+
+
+}
+.photo{
+    height: 50px;
+    width: 50px;
+    border-radius: 50% ;
+    border: 0.5px solid black;
+    background-image: url(WhatsApp\ Image\ 2024-10-27\ at\ 16.09.41_35cb323b.jpg);
+    background-size: cover;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.book{
+    width: 10%;
+    color: white;
+    
+}
+.site{
+    width: 50%;
+    position: relative;
+    left: 100px;
+    font-size: xx-large;
+    color: white;
+}
+.site a{
+    text-decoration: none;
+    color: black;
+    color: white;
+}
+
+.booking{
+    font-size: larger;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    
+}
+
+.history{
+    color: white;
+    text-decoration: none;
+}
+
+.cont{
+
+    position: relative;
+    top: 40vh;
+    display: flex;
+    justify-content: center;
+    background-color: #0F1111;
+    color: white;
+    padding: 40px;
+    width: max-content;
+    height: max-content;
+    
+    
+}
+
+.but{
+    
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+
+}
+
+.footer{
+    display: flex;
+    height: 10vh;
+    width: 100vw;
+    background-color: #0F1111;
+    
+    align-items: center;
+    justify-content: center;  
+    color: white;
+    position: fixed;
+    bottom: 0px;
+    
+}
+.para{
+    width: 100%;
+    height: 100px;
+    align-content: center;
+    align-self: center;
+    position: absolute;
+    left: 43%;
+    
+    
+}
+.ln{
+    text-decoration: none;
+    color: white;
+}
+
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Send the video behind all other content */
+}
